@@ -64,15 +64,17 @@ __meta__ = {
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 margin_left = 76.0
-margin_right = 76.0
+margin_right = 252.0
 margin_bottom = 32.0
+size_flags_horizontal = 3
 
 [node name="Score Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
 visible = false
-margin_right = 60.0
+margin_right = 176.0
 margin_bottom = 32.0
 custom_fonts/font = SubResource( 2 )
 text = "Score"
+align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }

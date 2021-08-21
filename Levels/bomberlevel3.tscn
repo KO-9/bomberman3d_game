@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Levels/bmap/bomberlevel3.glb" type="PackedScene" id=1]
 [ext_resource path="res://Crate/Crate.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Levels/bomberlevel.gd" type="Script" id=3]
-[ext_resource path="res://Pickups/Bomb up.tscn" type="PackedScene" id=4]
 
 [node name="map" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
@@ -11,48 +10,282 @@ script = ExtResource( 3 )
 [node name="Crates" type="Spatial" parent="." index="85"]
 
 [node name="Crate" parent="Crates" index="0" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00835, 1, 1.18162 )
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -5.00835, 1, 2.99985 )
 
 [node name="Crate2" parent="Crates" index="1" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.07172, 1, 1.18162 )
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -9.00006, 1, 2.99985 )
 
 [node name="Crate3" parent="Crates" index="2" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.13876, 1, 1.18162 )
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -5.00835, 1, 9.01359 )
 
 [node name="Crate4" parent="Crates" index="3" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2021, 1, 1.18162 )
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -9.00006, 1, 9.01359 )
 
 [node name="Crate5" parent="Crates" index="4" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.3352, 1, 1.18162 )
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -5.00835, 1, 6.98043 )
 
 [node name="Crate6" parent="Crates" index="5" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3986, 1, 1.18162 )
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -9.00006, 1, 6.98043 )
+
+[node name="Crate7" parent="Crates" index="6" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -5.00835, 1, 16.9766 )
+
+[node name="Crate8" parent="Crates" index="7" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -9.00006, 1, 16.9766 )
+
+[node name="Crate9" parent="Crates" index="8" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -16.9782, 1, 15.0113 )
+
+[node name="Crate10" parent="Crates" index="9" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -20.9699, 1, 15.0113 )
+
+[node name="Crate11" parent="Crates" index="10" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -16.9782, 1, 12.9782 )
+
+[node name="Crate12" parent="Crates" index="11" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -20.9699, 1, 12.9782 )
+
+[node name="Crate13" parent="Crates" index="12" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -21.0747, 1, 2.99985 )
+
+[node name="Crate14" parent="Crates" index="13" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -25.0664, 1, 2.99985 )
+
+[node name="Crate15" parent="Crates" index="14" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -21.0747, 1, 9.01359 )
+
+[node name="Crate16" parent="Crates" index="15" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -25.0664, 1, 9.01359 )
+
+[node name="Crate17" parent="Crates" index="16" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -21.0747, 1, 6.98043 )
+
+[node name="Crate18" parent="Crates" index="17" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -25.0664, 1, 6.98043 )
+
+[node name="Crate19" parent="Crates" index="18" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -21.0747, 1, 16.9766 )
+
+[node name="Crate20" parent="Crates" index="19" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -25.0664, 1, 16.9766 )
+
+[node name="Crate21" parent="Crates" index="20" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -33.0445, 1, 15.0113 )
+
+[node name="Crate22" parent="Crates" index="21" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -37.0362, 1, 15.0113 )
+
+[node name="Crate23" parent="Crates" index="22" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -33.0445, 1, 12.9782 )
+
+[node name="Crate24" parent="Crates" index="23" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -37.0362, 1, 12.9782 )
+
+[node name="Crate25" parent="Crates" index="24" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -13.0091, 1, 1.134 )
+
+[node name="Crate26" parent="Crates" index="25" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -17.0008, 1, 1.134 )
+
+[node name="Crate27" parent="Crates" index="26" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -13.0091, 1, 7.01852 )
+
+[node name="Crate28" parent="Crates" index="27" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -17.0008, 1, 7.01852 )
+
+[node name="Crate29" parent="Crates" index="28" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -5.00835, 1, 0.986142 )
+
+[node name="Crate30" parent="Crates" index="29" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -20.9699, 1, 28.9932 )
+
+[node name="Crate31" parent="Crates" index="30" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -21.0747, 1, 19.0148 )
+
+[node name="Crate32" parent="Crates" index="31" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -25.0664, 1, 19.0148 )
+
+[node name="Crate33" parent="Crates" index="32" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -21.0747, 1, 25.0286 )
+
+[node name="Crate34" parent="Crates" index="33" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -25.0664, 1, 25.0286 )
+
+[node name="Crate35" parent="Crates" index="34" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -21.0747, 1, 22.9954 )
+
+[node name="Crate36" parent="Crates" index="35" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -25.0664, 1, 22.9954 )
+
+[node name="Crate37" parent="Crates" index="36" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -21.0747, 1, 32.9916 )
+
+[node name="Crate38" parent="Crates" index="37" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -25.0664, 1, 32.9916 )
+
+[node name="Crate39" parent="Crates" index="38" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -8.71134, 1, 28.9932 )
+
+[node name="Crate40" parent="Crates" index="39" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -8.81612, 1, 19.0148 )
+
+[node name="Crate41" parent="Crates" index="40" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -12.8078, 1, 19.0148 )
+
+[node name="Crate42" parent="Crates" index="41" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -8.81612, 1, 25.0286 )
+
+[node name="Crate43" parent="Crates" index="42" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -12.8078, 1, 25.0286 )
+
+[node name="Crate44" parent="Crates" index="43" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -8.81612, 1, 22.9954 )
+
+[node name="Crate45" parent="Crates" index="44" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -12.8078, 1, 22.9954 )
+
+[node name="Crate46" parent="Crates" index="45" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -8.81612, 1, 32.9916 )
+
+[node name="Crate47" parent="Crates" index="46" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -12.8078, 1, 32.9916 )
+
+[node name="Crate48" parent="Crates" index="47" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -32.9597, 1, 28.9932 )
+
+[node name="Crate49" parent="Crates" index="48" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -33.0645, 1, 19.0148 )
+
+[node name="Crate50" parent="Crates" index="49" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -37.0562, 1, 19.0148 )
+
+[node name="Crate51" parent="Crates" index="50" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -33.0645, 1, 25.0286 )
+
+[node name="Crate52" parent="Crates" index="51" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -37.0562, 1, 25.0286 )
+
+[node name="Crate53" parent="Crates" index="52" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -33.0645, 1, 22.9954 )
+
+[node name="Crate54" parent="Crates" index="53" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -37.0562, 1, 22.9954 )
+
+[node name="Crate55" parent="Crates" index="54" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -33.0645, 1, 32.9916 )
+
+[node name="Crate56" parent="Crates" index="55" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -37.0562, 1, 32.9916 )
+
+[node name="Crate57" parent="Crates" index="56" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -21.0747, 1, 20.9704 )
+
+[node name="Crate58" parent="Crates" index="57" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -1.18205, 1, 20.9704 )
+
+[node name="Crate59" parent="Crates" index="58" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -1.18205, 1, 12.9801 )
+
+[node name="Crate60" parent="Crates" index="59" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -17.0008, 1, 4.99091 )
+
+[node name="Crate61" parent="Crates" index="60" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -37.0362, 1, 9.05058 )
+
+[node name="Crate62" parent="Crates" index="61" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -33.0445, 1, 7.01742 )
+
+[node name="Crate63" parent="Crates" index="62" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -29.151, 1, 6.98809 )
+
+[node name="Crate64" parent="Crates" index="63" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -25.1592, 1, 4.95493 )
+
+[node name="Crate65" parent="Crates" index="64" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -28.9376, 1, 12.9782 )
+
+[node name="Crate66" parent="Crates" index="65" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -29.0424, 1, 9.01359 )
+
+[node name="Crate67" parent="Crates" index="66" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -29.0424, 1, 16.9766 )
+
+[node name="Crate68" parent="Crates" index="67" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -29.0424, 1, 25.0286 )
+
+[node name="Crate69" parent="Crates" index="68" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -40.7826, 1, 12.9782 )
+
+[node name="Crate70" parent="Crates" index="69" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -40.8874, 1, 9.01359 )
+
+[node name="Crate71" parent="Crates" index="70" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -40.8874, 1, 16.9766 )
+
+[node name="Crate72" parent="Crates" index="71" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -40.8874, 1, 25.0286 )
+
+[node name="Crate73" parent="Crates" index="72" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -5.00835, 1, 12.8391 )
+
+[node name="Crate74" parent="Crates" index="73" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -9.00006, 1, 12.8391 )
+
+[node name="Crate75" parent="Crates" index="74" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -4.9914, 1, 25.0245 )
+
+[node name="Crate76" parent="Crates" index="75" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -4.9914, 1, 29.005 )
+
+[node name="Crate77" parent="Crates" index="76" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -29.0424, 1, 21.0508 )
+
+[node name="Crate78" parent="Crates" index="77" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -29.1737, 1, 1.134 )
+
+[node name="Crate79" parent="Crates" index="78" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -33.1654, 1, 1.134 )
+
+[node name="Crate80" parent="Crates" index="79" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -17.0239, 1, 25.0919 )
+
+[node name="Crate81" parent="Crates" index="80" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -17.0239, 1, 23.0587 )
+
+[node name="Crate82" parent="Crates" index="81" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -5.00835, 1, 5.008 )
+
+[node name="Crate83" parent="Crates" index="82" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -9.00006, 1, 5.008 )
+
+[node name="Crate84" parent="Crates" index="83" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -12.8078, 1, 9.11368 )
+
+[node name="Crate85" parent="Crates" index="84" instance=ExtResource( 2 )]
+transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -12.8078, 1, 15.1274 )
 
 [node name="Spawns" type="Spatial" parent="." index="86"]
 
 [node name="Position3D" type="Position3D" parent="Spawns" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.06348, 1.61136, 1.97929 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.06348, -0.626194, 1.97929 )
 
 [node name="Position3D2" type="Position3D" parent="Spawns" index="1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40.8533, 1.1999, 1.08112 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40.853, -0.626, 1.081 )
 
 [node name="Position3D3" type="Position3D" parent="Spawns" index="2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.06348, 1.61136, 32.7067 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.063, -0.626, 32.707 )
 
 [node name="Position3D4" type="Position3D" parent="Spawns" index="3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40.8533, 1.1999, 31.8085 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40.853, -0.626, 31.809 )
 
 [node name="Position3D5" type="Position3D" parent="Spawns" index="4"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.06348, 1.61136, 17.2126 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.063, -0.626, 17.213 )
 
 [node name="Position3D6" type="Position3D" parent="Spawns" index="5"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40.8533, 1.1999, 16.3144 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40.853, -0.626, 16.314 )
 
 [node name="Position3D7" type="Position3D" parent="Spawns" index="6"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9153, 1.61136, 17.2126 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.915, -0.626, 17.213 )
 
 [node name="Position3D8" type="Position3D" parent="Spawns" index="7"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.0628, 1.1999, 21.0562 )
-
-[node name="Bomb up" parent="." index="87" instance=ExtResource( 4 )]
-transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 2, -5.6595, 1.6021, 9.07969 )

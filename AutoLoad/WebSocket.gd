@@ -84,6 +84,7 @@ func load_map():
 
 func map_loaded(newMap):
 	map = newMap
+	player_state = playerStates.IN_GAME
 	var scene_root = get_tree().get_current_scene()
 	var instacedScene = player_scene.instance()
 	scene_root.get_node("Players").add_child(instacedScene)
@@ -151,8 +152,9 @@ func startRound(payload):
 	player.startRound()
 	
 func spawnItem(payload):
-	var scene_root = get_tree().get_current_scene()
-	scene_root.addItem(payload.item_id, payload.position)
+	if player_state == playerStates.IN_GAME:
+		var scene_root = get_tree().get_current_scene()
+		scene_root.addItem(payload.item_id, payload.position)
 
 func loadPlayers():
 	var scene_root = get_tree().get_current_scene()
@@ -186,6 +188,16 @@ func playerKilled(payload):
 	
 	if killed_player != null:
 		killed_player.die(payload)
+		
+func gameEnded(payload):
+	var lobby_instance = lobby_scene.instance()
+	lobby_instance.players = payload.players
+	lobby_instance.code = payload.code
+	lobby_instance.state = "game_ended"
+	get_node("/root").add_child(lobby_instance)
+	get_node("/root").remove_child(get_node("/root").get_node("GameContainer"))
+	get_tree().current_scene = lobby_instance
+	player_state = playerStates.IN_LOBBY
 	
 func _on_data():
 	var payload = JSON.parse(_client.get_peer(1).get_packet().get_string_from_utf8()).result
@@ -215,6 +227,8 @@ func _on_data():
 				startRound(payload)
 			"spawn_item":
 				spawnItem(payload)
+			"game_ended":
+				gameEnded(payload)
 	
 func updateState(pkt):
 	_client.get_peer(1).put_packet(pkt)
