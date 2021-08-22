@@ -39,6 +39,9 @@ var gamestate = gameStates.WAITING
 var dead = false
 
 onready var animPlayer = $"Model/Rig/AnimationPlayer"
+onready var camera = $"Gimble/Camera" as Camera
+onready var camera_mount = $"Gimble"
+const CAMERA_INCREMENT = 0.1
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -123,6 +126,7 @@ func bombRespawn():
 		bombs += 1
 
 func _physics_process(delta):
+	handleCamera()
 	if canPlay():
 		handleMotion()
 	if canPlant() && Input.is_action_just_pressed("plant_bomb"):
@@ -142,13 +146,46 @@ func updateWalkState(newWalkState):
 	newWalkState.position = { "x": global_transform.origin.x, "y": global_transform.origin.y, "z": global_transform.origin.z }
 	WebSocket._sendWalkState(newWalkState)
 
+func handleCamera():
+	var camera_zoom = camera.transform.origin.z
+	if Input.is_action_pressed("zoom_in"):
+		camera_zoom = camera_zoom - CAMERA_INCREMENT
+		camera.transform.origin.z = camera_zoom
+	elif Input.is_action_pressed("zoom_out"):
+		camera_zoom = camera_zoom + CAMERA_INCREMENT
+		camera.transform.origin.z = camera_zoom
+	elif Input.is_action_just_pressed("pan_left"):
+		print("before: " + String(rad2deg(camera_mount.rotation[1])))
+		camera_mount.rotate_y(deg2rad(-90))
+		print("after: " + String(rad2deg(camera_mount.rotation[1])))
+	elif Input.is_action_just_pressed("pan_right"):
+		var camera_rotation = round(rad2deg(camera_mount.rotation[1]))
+		print("before: " + String(camera_rotation))
+		camera_mount.rotate_y(deg2rad(90))
+		camera_rotation = round(rad2deg(camera_mount.rotation[1]))
+		print("after: " + String(camera_rotation))
+	elif Input.is_action_pressed("tilt_up"):
+		camera_mount.rotate_x(-CAMERA_INCREMENT)
+	elif Input.is_action_pressed("tilt_down"):
+		camera_mount.rotate_x(CAMERA_INCREMENT)
+		
 func handleMotion():
 	#
 	#var newWalkState = walkState.duplicate(true)
 	var newWalkState = walkState
 	newWalkState.changed = false
+	var camera_rotation = String(round(rad2deg(camera_mount.rotation[1])))
 	if Input.is_action_just_pressed("walk_up"):
-		newWalkState.up = true
+		print(camera_rotation)
+		match camera_rotation:
+			"0":
+				newWalkState.up = true
+			"-180":
+				newWalkState.down = true
+			"-90":
+				newWalkState.right = true
+			"90":
+				newWalkState.left = true
 		newWalkState.changed = true
 	if Input.is_action_just_released("walk_up"):
 		newWalkState.up = false
@@ -224,6 +261,6 @@ func _on_startTimer_timeout():
 	if start_time == 0:
 		gamestate = gameStates.PLAYING
 		start_timer.stop()
-		$"CenterMsg".visible = false
+		#$"CenterMsg".visible = false
 	else:
 		$"CenterMsg/Viewport/Label".text = "Round " + String(WebSocket.current_round) + "/" + String(WebSocket.max_rounds) + "\n" + "Starting in " + String(start_time) + " seconds."

@@ -7,6 +7,9 @@
 [node name="map" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 
+[node name="Floor" parent="." index="20"]
+transform = Transform( -21.2799, 0, 0, 0, -0.3, 0, 0, 0, -17.3102, -21, -0.268759, 17.048 )
+
 [node name="Crates" type="Spatial" parent="." index="85"]
 
 [node name="Crate" parent="Crates" index="0" instance=ExtResource( 2 )]
