@@ -34,7 +34,7 @@ collision_layer = 8
 script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 3.55853, 0, 0, 0, 1, 0, 0.41162, -0.000882447 )
+transform = Transform( 1, 0, 0, 0, 3.1229, 0.479427, 0, -1.70606, 0.877582, 0, 0.41162, -0.000882447 )
 shape = SubResource( 1 )
 
 [node name="Model" type="Spatial" parent="."]
@@ -64,10 +64,10 @@ texture = SubResource( 3 )
 [node name="startTimer" type="Timer" parent="."]
 
 [node name="Gimble" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0 )
+transform = Transform( 1, 0, 0, 0, 0.621613, 0.783325, 0, -0.783325, 0.621613, 0, 3, 0 )
 
 [node name="Camera" type="Camera" parent="Gimble"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75736, 5.65685 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.757, 12.157 )
 
 [node name="Controls" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.341056, 5.0536, 0 )

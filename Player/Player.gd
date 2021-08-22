@@ -332,6 +332,6 @@ func _on_startTimer_timeout():
 	if start_time == 0:
 		gamestate = gameStates.PLAYING
 		start_timer.stop()
-		#$"CenterMsg".visible = false
+		$"CenterMsg".visible = false
 	else:
 		$"CenterMsg/Viewport/Label".text = "Round " + String(WebSocket.current_round) + "/" + String(WebSocket.max_rounds) + "\n" + "Starting in " + String(start_time) + " seconds."
