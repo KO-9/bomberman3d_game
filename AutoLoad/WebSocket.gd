@@ -8,7 +8,7 @@ onready var map_scene = preload("res://GameContainer.tscn")
 onready var explosion = preload("res://Bomb/explosion.tscn")
 
 #export var SOCKET_URI = "ws://127.0.0.1:3000"
-export var SOCKET_URI = "ws://ollie.im:3000"
+export var SOCKET_URI = "wss://ollieb.co.uk:3000"
 var _client = WebSocketClient.new()
 var username = ""
 var player = null
