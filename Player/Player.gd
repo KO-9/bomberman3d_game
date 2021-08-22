@@ -149,10 +149,10 @@ func updateWalkState(newWalkState):
 func handleCamera():
 	var camera_zoom = camera.transform.origin.z
 	if Input.is_action_pressed("zoom_in"):
-		camera_zoom = camera_zoom - CAMERA_INCREMENT
+		camera_zoom = clamp(camera_zoom - CAMERA_INCREMENT, 5, 16)
 		camera.transform.origin.z = camera_zoom
 	elif Input.is_action_pressed("zoom_out"):
-		camera_zoom = camera_zoom + CAMERA_INCREMENT
+		camera_zoom = clamp(camera_zoom + CAMERA_INCREMENT, 5, 16)
 		camera.transform.origin.z = camera_zoom
 	elif Input.is_action_just_pressed("pan_left"):
 		print("before: " + String(rad2deg(camera_mount.rotation[1])))
@@ -165,9 +165,15 @@ func handleCamera():
 		camera_rotation = round(rad2deg(camera_mount.rotation[1]))
 		print("after: " + String(camera_rotation))
 	elif Input.is_action_pressed("tilt_up"):
-		camera_mount.rotate_x(-CAMERA_INCREMENT)
+		var mount_rotation = camera_mount.get_rotation_degrees()
+		var camera_rotation = String(round(rad2deg(camera_mount.rotation[1])))
+		mount_rotation[0] = clamp(mount_rotation[0] - 1, -74, 0)
+		camera_mount.set_rotation_degrees(mount_rotation)
 	elif Input.is_action_pressed("tilt_down"):
-		camera_mount.rotate_x(CAMERA_INCREMENT)
+		var mount_rotation = camera_mount.get_rotation_degrees()
+		var camera_rotation = String(round(rad2deg(camera_mount.rotation[1])))
+		mount_rotation[0] = clamp(mount_rotation[0] + 1, -74, 0)
+		camera_mount.set_rotation_degrees(mount_rotation)
 			
 func handleMotion():
 	#
@@ -177,8 +183,9 @@ func handleMotion():
 	var camera_rotation = String(round(rad2deg(camera_mount.rotation[1])))
 	if camera_rotation == "-0":
 		camera_rotation = "0"
+	if camera_rotation == "180":
+		camera_rotation = "-180"
 	if Input.is_action_just_pressed("walk_up"):
-		print(camera_rotation)
 		match camera_rotation:
 			"0":
 				newWalkState.up = true
@@ -267,7 +274,16 @@ func handleMotion():
 				newWalkState.up = false
 		newWalkState.changed = true
 	
+	if !Input.is_action_pressed("walk_up") && !Input.is_action_pressed("walk_down") && !Input.is_action_pressed("walk_left") && !Input.is_action_pressed("walk_right") && (walkState.up || walkState.down || walkState.left || walkState.right):
+		print("tru")
+		newWalkState.up = false
+		newWalkState.down = false
+		newWalkState.left = false
+		newWalkState.right = false
+		newWalkState.changed = true
+	
 	if newWalkState.changed:
+		print(camera_rotation)
 		print(newWalkState)
 		updateWalkState(newWalkState)
 		

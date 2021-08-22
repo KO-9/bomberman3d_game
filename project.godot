@@ -29,10 +29,6 @@ config/icon="res://icon.png"
 Lines="*res://AutoLoad/lines.gd"
 WebSocket="*res://AutoLoad/WebSocket.gd"
 
-[display]
-
-window/size/fullscreen=true
-
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/Line3D/plugin.cfg" )
