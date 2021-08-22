@@ -168,13 +168,15 @@ func handleCamera():
 		camera_mount.rotate_x(-CAMERA_INCREMENT)
 	elif Input.is_action_pressed("tilt_down"):
 		camera_mount.rotate_x(CAMERA_INCREMENT)
-		
+			
 func handleMotion():
 	#
 	#var newWalkState = walkState.duplicate(true)
 	var newWalkState = walkState
 	newWalkState.changed = false
 	var camera_rotation = String(round(rad2deg(camera_mount.rotation[1])))
+	if camera_rotation == "-0":
+		camera_rotation = "0"
 	if Input.is_action_just_pressed("walk_up"):
 		print(camera_rotation)
 		match camera_rotation:
@@ -188,43 +190,109 @@ func handleMotion():
 				newWalkState.left = true
 		newWalkState.changed = true
 	if Input.is_action_just_released("walk_up"):
-		newWalkState.up = false
+		match camera_rotation:
+			"0":
+				newWalkState.up = false
+			"-180":
+				newWalkState.down = false
+			"-90":
+				newWalkState.right = false
+			"90":
+				newWalkState.left = false
 		newWalkState.changed = true
 	if Input.is_action_just_pressed("walk_down"):
-		newWalkState.down = true
+		match camera_rotation:
+			"0":
+				newWalkState.down = true
+			"-180":
+				newWalkState.up = true
+			"-90":
+				newWalkState.left = true
+			"90":
+				newWalkState.right = true
 		newWalkState.changed = true
 	if Input.is_action_just_released("walk_down"):
-		newWalkState.down = false
+		match camera_rotation:
+			"0":
+				newWalkState.down = false
+			"-180":
+				newWalkState.up = false
+			"-90":
+				newWalkState.left = false
+			"90":
+				newWalkState.right = false
 		newWalkState.changed = true
 	if Input.is_action_just_pressed("walk_left"):
-		newWalkState.left = true
+		match camera_rotation:
+			"0":
+				newWalkState.left = true
+			"-180":
+				newWalkState.right = true
+			"-90":
+				newWalkState.up = true
+			"90":
+				newWalkState.down = true
 		newWalkState.changed = true
 	if Input.is_action_just_released("walk_left"):
-		newWalkState.left = false
+		match camera_rotation:
+			"0":
+				newWalkState.left = false
+			"-180":
+				newWalkState.right = false
+			"-90":
+				newWalkState.up = false
+			"90":
+				newWalkState.down = false
 		newWalkState.changed = true
 	if Input.is_action_just_pressed("walk_right"):
-		newWalkState.right = true
+		match camera_rotation:
+			"0":
+				newWalkState.right = true
+			"-180":
+				newWalkState.left = true
+			"-90":
+				newWalkState.down = true
+			"90":
+				newWalkState.up = true
 		newWalkState.changed = true
 	if Input.is_action_just_released("walk_right"):
-		newWalkState.right = false
+		match camera_rotation:
+			"0":
+				newWalkState.right = false
+			"-180":
+				newWalkState.left = false
+			"-90":
+				newWalkState.down = false
+			"90":
+				newWalkState.up = false
 		newWalkState.changed = true
 	
 	if newWalkState.changed:
+		print(newWalkState)
 		updateWalkState(newWalkState)
 		
 	if walkState.up:
+		var modelRotation = $"Model/Rig".get_rotation_degrees()[1]
+		if modelRotation != 180:
+			$"Model/Rig".set_rotation_degrees(Vector3(0, 180, 0))
 		Walk_Speed += Accelaration
 		if Walk_Speed > Maximum_Walk_Speed:
 			Walk_Speed = Maximum_Walk_Speed
 		velocity.x = -global_transform.basis.z.x * Walk_Speed
 		velocity.z = -global_transform.basis.z.z * Walk_Speed
 	if walkState.down:
+		var modelRotation = $"Model/Rig".get_rotation_degrees()[1]
+		if modelRotation != -1:
+			$"Model/Rig".set_rotation_degrees(Vector3(0, -1, 0))
 		Walk_Speed += Accelaration
 		if Walk_Speed > Maximum_Walk_Speed:
 			Walk_Speed = Maximum_Walk_Speed
 		velocity.x = global_transform.basis.z.x * Walk_Speed
 		velocity.z = global_transform.basis.z.z * Walk_Speed
 	if walkState.left:
+		var modelRotation = $"Model/Rig".get_rotation_degrees()[1]
+		if modelRotation != -90:
+			$"Model/Rig".set_rotation_degrees(Vector3(0, -90, 0))
 		Walk_Speed += Accelaration
 		if Walk_Speed > Maximum_Walk_Speed:
 			Walk_Speed = Maximum_Walk_Speed
@@ -232,6 +300,9 @@ func handleMotion():
 		velocity.z = -global_transform.basis.x.z * Walk_Speed
 		
 	if walkState.right:
+		var modelRotation = $"Model/Rig".get_rotation_degrees()[1]
+		if modelRotation != 90:
+			$"Model/Rig".set_rotation_degrees(Vector3(0, 90, 0))
 		Walk_Speed += Accelaration
 		if Walk_Speed > Maximum_Walk_Speed:
 			Walk_Speed = Maximum_Walk_Speed

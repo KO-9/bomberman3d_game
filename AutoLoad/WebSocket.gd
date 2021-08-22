@@ -121,7 +121,8 @@ func addNewBomb(payload):
 	scene_root.get_node("Items").add_child(instancedexplosion)
 	#instancedexplosion.get_node("Bomb").get_node("bomb").add_collision_exception_with(bomb_player)
 	instancedexplosion.global_transform.origin.x = payload.position.x
-	instancedexplosion.global_transform.origin.y = payload.position.y + 1.2
+	#instancedexplosion.global_transform.origin.y = payload.position.y + 1.2
+	instancedexplosion.global_transform.origin.y = payload.position.y + 0.5
 	instancedexplosion.global_transform.origin.z = payload.position.z
 	
 func findPlayerById(id):
@@ -134,10 +135,11 @@ func findPlayerById(id):
 	
 func updatePlayerState(payload):
 	if payload.id == player_id:
-		player.global_transform.origin.x = payload.position.x
-		player.global_transform.origin.y = payload.position.y
-		player.global_transform.origin.z = payload.position.z
-		player.walkState = payload.walkState
+		return
+		#player.global_transform.origin.x = payload.position.x
+		#player.global_transform.origin.y = payload.position.y
+		#player.global_transform.origin.z = payload.position.z
+		#player.walkState = payload.walkState
 	else:
 		var currentPlayer = yield(findPlayerById(payload.id), "completed")
 		if currentPlayer != null:
@@ -201,7 +203,7 @@ func gameEnded(payload):
 	
 func _on_data():
 	var payload = JSON.parse(_client.get_peer(1).get_packet().get_string_from_utf8()).result
-	print("received: ", payload)
+	#print("received: ", payload)
 	if ("msg" in payload) && payload.msg == "OK":
 		pass
 	if ("type" in payload):

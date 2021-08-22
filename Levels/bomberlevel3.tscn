@@ -10,6 +10,9 @@ script = ExtResource( 3 )
 [node name="Floor" parent="." index="20"]
 transform = Transform( -21.2799, 0, 0, 0, -0.3, 0, 0, 0, -17.3102, -21, -0.268759, 17.048 )
 
+[node name="static_collision" parent="Floor" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
 [node name="Crates" type="Spatial" parent="." index="85"]
 
 [node name="Crate" parent="Crates" index="0" instance=ExtResource( 2 )]
@@ -270,7 +273,7 @@ transform = Transform( 0.983885, 0, 0, 0, 1, 0, 0, 0, 0.994772, -12.8078, 1, 15.
 [node name="Spawns" type="Spatial" parent="." index="86"]
 
 [node name="Position3D" type="Position3D" parent="Spawns" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.06348, -0.626194, 1.97929 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.06348, 3.37381, 1.97929 )
 
 [node name="Position3D2" type="Position3D" parent="Spawns" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40.853, -0.626, 1.081 )
